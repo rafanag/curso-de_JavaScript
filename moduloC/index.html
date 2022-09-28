@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aquamarine;
+            font-size: 18pt;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        body > h1{
+            font-size: 18pt;
+
+        }
+        div#teste{
+            background-color: aqua;
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+        }
+        input{
+        }
+    </style>
+</head>
+<body>
+    <h1>Testando o DOM no java script</h1>
+    <div id="teste" >
+        <p>Ajustes</p>
+    </div>
+
+    
+        <div class="val">Valor 1</div><input type="number" name="valor1" id="_valor1">
+        <div class="val">Valor 2</div><input type="number" name="valor2" id="_valor2">
+         <input type="button" name="resultado" value="Resultado"  onclick="calcular()">
+
+    <div id="_resultado">Resultado</div>
+
+    <script>
+        var evento = window.document.getElementById('teste')
+        
+        evento.addEventListener('click',clicar)
+        evento.addEventListener('mouseenter', entrou)
+        evento.addEventListener('mouseout', saiu)
+    
+        function clicar(){
+            evento.innerHTML = 'Clicou!!!!'
+            evento.style.background = 'red' 
+            evento.style.color = 'white' 
+        }
+
+        function entrou(){
+            var corpo = document.querySelector('body')
+            evento.style.background = 'blue'
+            evento.style.color = 'green'
+            evento.innerText = 'Entrou'
+           corpo.style.background = 'white'
+        }
+
+        function saiu(){
+            var corpo = document.querySelector('body')
+            evento.style.background = 'white'
+            evento.style.color = 'blue'
+            evento.innerText = 'Saiu !!!!!'
+           corpo.style.background = 'green'
+        }
+        
+        function calcular(){
+            var n1 = document.getElementById('_valor1')
+            var n2 = document.getElementById('_valor2')
+            var result = document.querySelector('div#_resultado')
+            var num1 = Number(n1.value)
+            var num2 = Number(n2.value)
+            var res = num1+num2
+            result.innerHTML = res
+            result.style.color = 'white'
+
+
+        }
+   </script>
+</body>
+
+</html>
