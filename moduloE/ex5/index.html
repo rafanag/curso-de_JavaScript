@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio MdE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Contador</h1>
+    </header>
+    <section>
+        <div id="dados">
+           <p>
+             <label for="_inicio">Inicio:</label>
+             <input type="number" name="inicio" id="_inicio" value="0">
+           </p>
+           <p>
+             <label for="_fim">Fim:</label>
+             <input type="number" name="fim" id="_fim" value="10"> 
+            </p>
+            <p>
+             <label for="_passo">Passo:</label > 
+             <input type="number" name="passo" id="_passo" value="1">
+            </p>
+            <p>
+                <input type="button" id="_contar" value="Contar" onclick="iniciarContagem()">
+            </p>
+        </div>
+           
+        <div id="_result">
+            
+        </div>
+    </section>
+    <footer>
+        <p>&copy Rafael Nagel</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
