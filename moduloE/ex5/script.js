@@ -9,21 +9,34 @@ function iniciarContagem(){
     
     if(inpinicio.value =="" || inpfim.value =="" || inppasso.value == ""){
         window.alert("Preencha todos os campos")
-    }else if(inicio >= fim ){
-        window.alert("O inicio precisa ser menor que o fim ")
-    }else if(passo == 0){
-        window.alert("O passo não pode ser 0")
-    }else if(passo == 0 || passo > (fim/2) ){
-        alert("Passo maior que a perna")
+    }else if(passo <= 0){
+        window.alert("O passo não pode ser 0 ou menor")
     }else{ 
        var result = document.querySelector('div#_result') 
        result.innerHTML = `Inicio da contagem ${inicio} <br>
                            Fim da contagem ${fim} <br>
                            Conta de ${passo} em ${passo} <br>`
-       var cont = 0;
-        while(inicio != fim){
-           result.innerHTML+=`-${inicio}-`
-           inicio += passo
+        if(inicio < fim){
+            while(inicio <= fim){
+                result.innerHTML+=`${inicio}`
+                if( inicio < fim){
+                    result.innerHTML +=` \u{27A1}`
+                    }else{
+                     result.innerHTML +=` \u{1F3C1}`
+                    }
+                     inicio += passo
+            }  
+        }else{
+          for(let c = inicio; c >= fim; c-=passo){
+                result.innerHTML+=`${c}`
+                if( inicio < fim){
+                   result.innerHTML +=` \u{27A1}`
+                }else{
+                   result.innerHTML +=` \u{1F3C1}`
+                 }
+           }
         }
+        
     }
+    
 }
