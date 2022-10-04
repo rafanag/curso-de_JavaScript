@@ -22,6 +22,8 @@ function inserirNum(valor){
        bot.style.background = 'green'
        bot.style.color =  'white'
        cont++
+     }else{
+        alert(`Você não pode selecionar mais de ${qtdeNumeros} numeros`)
      }
    }else{
     numerosJogo[num - 1] = 0
@@ -60,7 +62,18 @@ function saiu(valor){
 }
 
 function gerarResultados(){
+    inf.innerHTML = ''
+    if(cont < 15){
+        alert('Você deve selecionar ao menos 15 dezenas')
+    }else{
+        
+        for(let i = 0; i < numerosJogo.length; i++){
+            inf.innerHTML += `-${numerosJogo[i]}`
+            if((i+1)%5 == 0){
+                inf.innerHTML += '<br>'
+            }
+        }
+    }
     
-    inf.innerHTML = `A quantidade de numeros a ser jogada é ${qtdeNumeros}`
 }
 
