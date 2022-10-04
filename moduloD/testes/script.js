@@ -7,15 +7,17 @@ let numerosJogo = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 let res = document.getElementById('res')
 let inf = document.getElementById('informacoes')
 let cont = 0;
-let maxNumeros = 18
-let qtdeNumeros = document.getElementById('_selN')
+//let maxNumeros = 18
+let valorSelect = document.getElementById('_selN')
+
+
 function inserirNum(valor){
-   
+    let qtdeNumeros = Number(valorSelect.options[valorSelect.selectedIndex].value)
     let num = Number(valor)
     bot = document.getElementById(`_n${num}`)
     
     if(numerosJogo[valor - 1] == 0){
-    if(cont < 15) {
+    if(cont < qtdeNumeros) {
        numerosJogo[num - 1] = num
        bot.style.background = 'green'
        bot.style.color =  'white'
@@ -58,6 +60,7 @@ function saiu(valor){
 }
 
 function gerarResultados(){
-    inf.innerHTML = `A quantidade de numeros a ser jogada é ${qtdeNumeros.value}`
+    
+    inf.innerHTML = `A quantidade de numeros a ser jogada é ${qtdeNumeros}`
 }
 
