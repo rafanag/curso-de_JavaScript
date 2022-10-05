@@ -63,17 +63,25 @@ function saiu(valor){
 
 function gerarResultados(){
     inf.innerHTML = ''
-    if(cont < 15){
-        alert('Você deve selecionar ao menos 15 dezenas')
-    }else{
-        
+   
+    //if(cont < 15){
+    //    alert('Você deve selecionar ao menos 15 dezenas')
+    //}else{
+       
         for(let i = 0; i < numerosJogo.length; i++){
-            inf.innerHTML += `-${numerosJogo[i]}`
+            if(numerosJogo[i] < 10){
+                inf.innerHTML += `| ${numerosJogo[i]} |`
+            }else{
+                inf.innerHTML += `|${numerosJogo[i]}|`
+            }
+           
             if((i+1)%5 == 0){
                 inf.innerHTML += '<br>'
             }
+            
         }
-    }
+    //}
+    
     
 }
 
