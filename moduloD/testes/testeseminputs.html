@@ -23,7 +23,7 @@
      </div>
 
     <section id="sectionNjogos">
-        
+        <h2>Selecione as Dezenas</h2>
         <div class="botoesNjogos">
             <input type="button" name="n1" id="_n1" value="01" onclick="inserirNum(value)" onmouseenter="entrou(value)" onmouseout="saiu(value)">
             <input type="button" name="n2" id="_n2" value="02" onclick="inserirNum(value)" onmouseenter="entrou(value)" onmouseout="saiu(value)">
@@ -65,15 +65,21 @@
         
         </div>
         
-        <div id="_enviarResultados" ><input type="button" value="Enviar" onclick="gerarResultados()"></div>
-        
+        <div class="bt" >
+            <input type="button" value="Conferir Estatisticas" onclick="gerarEstatisticas()">
+            <input type="button" value="Reset" onclick="reset()">
+            <input type="button" value="Jogo Aleatorio" onclick="jogoAleatorio()">
+        </div>
         <div id="res">
-            Resultados
+           
         </div>
 
         <div id="informacoes" >
-            <h2>Informações</h2>
+            
         </div>
+    </section>
+    <section id="estatisticas">
+
     </section>
     <footer>
 

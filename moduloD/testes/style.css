@@ -10,7 +10,7 @@ body{
     background-color: rgba(177, 177, 204, 0.534);
 }
 
-header > h1{
+header > h1,h2{
     text-align: center;
 
 }
@@ -24,21 +24,21 @@ section#sectionNjogos{
     padding: 10px;
     background-color: rgb(136, 136, 148);
 }
+
 div{
     display: block;
     margin: auto;
+    text-align: center;
 }
 
 section#sectionNjogos > div.botoesNjogos{
-    padding: 5px;
-    text-align: center;
+    padding: 5px;  
 }
 
  div#selecionarQtdeNum{
     width:400px;
     height: 10px;
     padding: 20px;
-    text-align: center;
 }
 section#sectionNjogos > div.botoesNjogos > input {
     background-color: white;
@@ -46,35 +46,35 @@ section#sectionNjogos > div.botoesNjogos > input {
     padding: 15px;
 
 }
-section#sectionNjogos > div#_enviarResultados{
-    display: block;
-    margin: auto;
-    text-align: center;
-}
 
-section#sectionNjogos > div#_enviarResultados > input{
-    padding: 10px;
+/*Botoes */
+section#sectionNjogos > div.bt > input{
+    padding: 8px;
     width: 200px;
-    margin: 10px;
+    margin: 8px;
     border-radius: 5px;
     background-color: rgba(118, 134, 134, 0.603);
     color: white;
-    font-size: 1.1em;
+    font-size: 1em;
 }
-
-section#sectionNjogos > div#_enviarResultados > input:hover{
+/*Botão enviar*/
+section#sectionNjogos > div.bt> input:hover{
     cursor: pointer;
 }
-
+/*Mostra as informações */
 section#sectionNjogos > div#informacoes{
-    display: inline-block;
-    background-color: rgb(133, 148, 148);
+    margin-top: 20px;
+    vertical-align: 10px;
     border-radius: 10px;
     width: 300px;
-    height: 150px;
     font-size: 20px;
     text-align: center;
+    line-height: 1.5em;
    
+}
+
+section#estatisticas{
+    padding: 10px;
 }
 
 
