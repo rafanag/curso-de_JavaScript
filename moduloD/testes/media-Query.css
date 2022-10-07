@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 798px) {
+   body{
+    background-color: rgb(83, 83, 94);
+   }
+   header h1{
+    
+    padding: 10px;
+   }
+   
+  
+   section{
+    
+   }
+   section#sectionNjogos {
+        width: 80%;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+       
+
+    }
+
+    section#sectionresultados > div{
+        
+        margin: auto;
+        width: 200px;
+        height: 120px;
+        display: inline-block;
+        
+    }
+    section#sectionresultados > div#res{
+       
+        
+    }
+    section#sectionresultados > div#paresimpares{
+        
+        
+        
+    }
+    
+    section#estatisticas{
+        display: block;
+        margin: auto;
+        width:80%;
+        text-align: center;
+        background-color: white;
+        
+    }
+}

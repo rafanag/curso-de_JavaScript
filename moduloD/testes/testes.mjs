@@ -1,5 +1,5 @@
 
-    //let array = new arraytest()
+    
     let numerosJogo = []
     let dezSorteadas = [
 [2,	4,	5,	6,	7,	8,	11,	14,	17,	18,	19,	20,	21,	23,	24], //2631	05/10/2022
@@ -105,6 +105,25 @@
 [1 ,2	,3	,4	,6	,9	,10	,12	,13	,14	,16	,17	,18	,22	,25], // 2532 27/05/2022
 [1 ,2	,3	,4	,5	,7	,8	,11	,12	,16	,17	,18	,20	,21	,25] // 2531 26/05/2022
 ]
+gerarParesImpares()
+
+function gerarParesImpares(){
+    let jogo = [1,3,5,7,9,2,14,18,22,56,35]
+    let contaPares = 0
+    let contaImpares = 0
+    for(let i=0; i<jogo.length; i++){
+        if(jogo[i]%2 == 0){
+            contaPares++
+        }else{
+            contaImpares++
+        }
+    }
+    console.log(`Pares = ${contaPares}`)
+    console.log(`Impares = ${contaImpares}`)
+}
+
+
+/*
 jogoAleatorio()
 function jogoAleatorio(){
     let numeros = []

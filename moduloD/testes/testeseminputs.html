@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media-Query.css">
     <title>testes</title>
 </head>
 <body>
@@ -13,7 +14,7 @@
     </header>
     
     <div id="selecionarQtdeNum">
-        <label for="">Selecione o Quantidade de números</label>
+        <label id="selectN"for="_selN">Selecione o Quantidade de números</label>
         <select name="Selecione" id="_selN">
          <option value="15">15</option>
          <option value="16">16</option>
@@ -66,17 +67,23 @@
         </div>
         
         <div class="bt" >
-            <input type="button" value="Conferir Estatisticas" onclick="gerarEstatisticas(),gerarResultados()">
+            <input type="button" value="Conferir Estatisticas" onclick="gerarEstatisticas(),gerarParesImpares()">
             <input type="button" value="Reset" onclick="reset()">
             <input type="button" value="Jogo Aleatorio" onclick="jogoAleatorio()">
         </div>
-        <div id="res">
-           
-        </div>
-
-        <div id="informacoes" >
+        <section id="sectionresultados">
+            <div id="res">
             
-        </div>
+            </div>
+            <div id ="paresimpares">
+
+            </div>
+        
+
+            <div id="informacoes" >
+         
+            </div>
+        </section> 
     </section>
     <section id="estatisticas">
 
