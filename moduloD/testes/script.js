@@ -6,17 +6,19 @@ let corBotoesHover = 'rgb(0, 0, 255)'
 let numerosJogo = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 let res = document.getElementById('res')
 let inf = document.getElementById('informacoes')
-let cont = 0;
-//let maxNumeros = 18
+let mostrarEst = document.getElementById('estatisticas')
 let valorSelect = document.getElementById('_selN')
 
+let cont = 0;
+let habJogoAleatorio = false
+//let maxNumeros = 18
 
 function inserirNum(valor){
     let qtdeNumeros = Number(valorSelect.options[valorSelect.selectedIndex].value)
     let num = Number(valor)
     bot = document.getElementById(`_n${num}`)
     if(numerosJogo[valor - 1] == 0){
-        if(cont < qtdeNumeros) {
+        if(cont < qtdeNumeros ) {
         numerosJogo[num - 1] = num
         bot.style.background = 'green'
         bot.style.color =  'white'
@@ -52,18 +54,22 @@ function jogoAleatorio(){
         let bot = document.getElementById(`_n${num}`)
         bot.style.background = corBotoesMarcados
         bot.style.color = 'white'
-        numerosJogo[i] = num
+        numerosJogo[num -1] = num//organiza na posição correta no vetor com todos os jogos 
         numeros[num - 1] = 0
        } else{
         i--
-        //console.log(`O numero ${num} repetiu`)
        }   
     }
 }
 
+
 function reset(){
    // alert('resetando....')
+    inf.innerHTML = '' 
+    res.innerHTML = ''
+    mostrarEst.innerHTML = ''
     for(let num=0; num<25; num++){
+    numerosJogo[num] = 0
     let bot = document.getElementById(`_n${num +1}`)
         bot.style.backgroundColor = corFundoBotoes
         bot.style.color = 'black'
@@ -72,9 +78,6 @@ function reset(){
 }
 function gerarResultados(){
     inf.innerHTML = ''
-    if(cont < 15){
-        alert('Você deve selecionar ao menos 15 dezenas')
-    }else{
        
         for(let i = 0; i < numerosJogo.length; i++){
             if(numerosJogo[i] < 10){
@@ -88,7 +91,7 @@ function gerarResultados(){
             }
             
         }
-    }
+    
     
     
 }
@@ -99,9 +102,9 @@ function gerarEstatisticas(){
     }else{
         let numteste = 1
         let contaGanhos = [0,0,0,0,0]
-        let mostrarEst = document.getElementById('estatisticas')
+        
         let nConcurso = 2631
-        let cont1 = 0
+        let contGanhos = 0
 
         mostrarEst.innerHTML = (`<p>NÚMEROS DE JOGOS ${dezSorteadas.length}</p>`)
         for(let linhaMatrix = 0; linhaMatrix < dezSorteadas.length; linhaMatrix++){
@@ -109,18 +112,18 @@ function gerarEstatisticas(){
             if(numerosJogo[i] > 0){
                 for(let j=0; j<15;j++){
                     if(numerosJogo[i] == dezSorteadas[linhaMatrix][j]){
-                        cont1++
+                        contGanhos++
                         break
                     } 
                 }
             }
         }
-        if(cont1 > 10){
+        if(contGanhos > 10){
            
             mostrarEst.style.fontSize = '1.1em'
             mostrarEst.style.color = 'red'
-            mostrarEst.innerHTML += (`<br>${numteste}-Você acertou ${cont} Dezenas no concurso ${nConcurso}<br>`)
-            switch(cont1){
+            mostrarEst.innerHTML += (`<br>${numteste}-Você acertou ${contGanhos} Dezenas no concurso ${nConcurso}<br>`)
+            switch(contGanhos){
                 case 11:
                     contaGanhos[0]++
                     break
@@ -141,7 +144,7 @@ function gerarEstatisticas(){
         }
         
         nConcurso--
-        cont1 = 0
+        contGanhos = 0
     }
     res.innerHTML = "Este jogo acertou:<br>"
     res.innerHTML += `11 dezenas ${contaGanhos[0]} vezes<br>`

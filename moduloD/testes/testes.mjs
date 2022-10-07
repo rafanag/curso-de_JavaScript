@@ -121,7 +121,9 @@ function jogoAleatorio(){
         console.log(`O numero ${num} repetiu`)
        }   
     }
-    numerosJogo.sort()
+
+    
+    //numerosJogo.sort()
     //console.log(`o numero 20 esta na posição ${numerosJogo.indexOf(20)}`)
    console.log(numerosJogo)
    console.log(numeros)
